@@ -13,8 +13,8 @@ st.set_page_config(
      initial_sidebar_state="expanded"
  )
 
-df = pd.read_excel('Pay Range Master 051722.xlsb', sheet_name='Master_List', converters={"Grade":str,
-                                                                                         "AIP %":str}, engine='pyxlsb')
+df = pd.read_excel('Pay Range Master 051722.xlsx', sheet_name='Master_List', converters={"Grade":str,
+                                                                                         "AIP %":str})
 
 df['Job Code'] = df['Job Code'].astype(int)
 
