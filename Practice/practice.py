@@ -8,6 +8,5 @@ import streamlit as st
 #     "Has environment variables been set:",
 #     os.environ["db_username"] == st.secrets["db_username"])
 
-df = pd.read_excel('EE_Data.xlsx', usecols='P,K')
-summary = pd.pivot_table(df, index='MSA', values='Annual Salary', aggfunc=np.mean)
-st.dataframe(summary)
+df = pd.read_excel('Pay Range Master 051722.xlsb', sheet_name='Master_List')
+st.dataframe(df)
