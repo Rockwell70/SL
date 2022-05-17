@@ -14,8 +14,10 @@ st.set_page_config(
  )
 
 df = pd.read_excel('Pay Range Master 051722.xlsb', sheet_name='Master_List', converters={"Grade":str,
-                                                                                         "AIP %":str,
-                                                                                         'Job Code':int})
+                                                                                         "AIP %":str}, engine='pyxlsb')
+
+df['Job Code'] = df['Job Code'].astype(int)
+
 df['Hourly Min'] = round(df['Hourly Min'],2)
 df['Hourly Mid'] = round(df['Hourly Mid'],2)
 df['Hourly Max'] = round(df['Hourly Max'],2)
