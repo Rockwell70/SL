@@ -13,19 +13,11 @@ st.set_page_config(
      initial_sidebar_state="expanded"
  )
 
-df = pd.read_excel('Pay Range Master 051722.xlsx', sheet_name='Master_List', converters={"Grade":str,
-                                                                                         "AIP %":str})
+df = pd.read_excel('Pay Range Master 051722.xlsx', sheet_name='Master_List')
 
+df['Grade'] = df['Grade'].astype(str)
+df['AIP %'] = df['AIP %'].astype(str)
 df['Job Code'] = df['Job Code'].astype(int)
-
-df['Hourly Min'] = round(df['Hourly Min'],2)
-df['Hourly Mid'] = round(df['Hourly Mid'],2)
-df['Hourly Max'] = round(df['Hourly Max'],2)
-
-df['Annual Min'] = round(df['Annual Min'],0)
-df['Annual Mid'] = round(df['Annual Mid'],0)
-df['Annual Max'] = round(df['Annual Max'],0)
-
 
 titles = ['']
 
