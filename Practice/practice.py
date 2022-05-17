@@ -1,8 +1,6 @@
 import pandas as pd
 import streamlit as st
 
-pd.options.display.float_format = "{:0,.2f}".format
-
 st.set_page_config(
      page_title="Job Title list",
      page_icon="🧊",
